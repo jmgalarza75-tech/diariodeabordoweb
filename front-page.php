@@ -21,8 +21,8 @@ get_header(); ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/jose_maria.jpg" alt="Jose Maria">
                 </div>
                 <div class="hero-buttons">
-                    <a href="<?php echo site_url('/about'); ?>" class="btn-secondary">Mi Manifiesto &rarr;</a>
-                    <a href="#newsletter" class="btn-primary" id="hero-cta">Subir a bordo &rarr;</a>
+                    <a href="<?php echo site_url('/about'); ?>" class="btn-secondary">Mi Manifiesto →</a>
+                    <a href="#newsletter" class="btn-primary" id="hero-cta">Subir a bordo →</a>
                 </div>
             </div>
         </div>
