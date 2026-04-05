@@ -1,183 +1,111 @@
 <?php 
 /**
- * Template Name: Home Page Godly Full
+ * Template Name: Home Page Godly
  */
 get_header(); ?>
 
-<style>
-/* ── DIARIO DE ABORDO — GODLY ENGINE ── */
-:root {
-    --bg: #080808;
-    --accent: #c9a84c;
-    --text: #f0ede8;
-    --text-muted: #888884;
-    --line: #222;
-}
-
-#godly-root {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Space Grotesk', sans-serif;
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* Animations */
-@keyframes da-ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes da-fadeUp{to{opacity:1;transform:translateY(0)}}
-.da-reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;}
-.da-reveal.da-vis{opacity:1;transform:none;}
-
-/* Hero */
-.da-hero {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 140px 40px 80px;
-}
-
-.da-btn-primary { 
-    display: inline-flex; align-items: center; gap: 8px; 
-    background: #fff; color: #000 !important; 
-    font-size: 11px; font-weight: 700; letter-spacing: .1em; 
-    text-transform: uppercase; text-decoration: none; 
-    padding: 14px 28px; transition: all .3s; 
-}
-.da-btn-secondary { 
-    display: inline-flex; align-items: center; gap: 8px; 
-    color: #fff; font-size: 11px; font-weight: 600; 
-    letter-spacing: .1em; text-transform: uppercase; 
-    text-decoration: none; padding: 14px 28px; 
-    border: 1px solid rgba(255,255,255,0.2); transition: all .3s; 
-}
-
-/* Ticker */
-.da-ticker-wrap {
-    overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); 
-    padding: 18px 0; background: #111;
-}
-.da-ticker-content {
-    display: flex; animation: da-ticker 30s linear infinite; width: max-content;
-}
-
-/* Pillars */
-.da-pillar {
-    background: var(--bg); padding: 52px 44px; position: relative; overflow: hidden; 
-    border: 1px solid var(--line); transition: background .4s ease;
-}
-.da-pillar:hover { background: #111 !important; }
-
-/* Responsive */
-@media(max-width:768px){
-    .da-hero { padding: 110px 24px 60px; }
-    .da-pillars-grid { grid-template-columns: 1fr !important; }
-    .da-stats { grid-template-columns: 1fr !important; }
-}
-</style>
-
-<div id="godly-root">
-    <!-- HERO -->
-    <section class="da-hero">
-        <p style="font-family:'Space Mono',monospace; font-size:11px; color:var(--accent); letter-spacing:.25em; text-transform:uppercase; margin-bottom:40px;">
-            ⊜ Newsletter · Estrategia · Liderazgo Estoico
-        </p>
-        <h1 style="font-size:clamp(54px,9vw,118px); font-weight:700; line-height:.95; letter-spacing:-.03em; max-width:900px; margin:0;">
-            Toma el tim&oacute;n<br>de tu <span style="color:var(--accent);">liderazgo.</span>
-        </h1>
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:40px;">
-            <a href="<?php echo site_url('/about'); ?>" class="da-btn-secondary">Mi Manifiesto →</a>
-            <a href="#newsletter" class="da-btn-primary">Subir a bordo →</a>
-        </div>
-    </section>
-
-    <!-- TICKER -->
-    <div class="da-ticker-wrap">
-        <div class="da-ticker-content">
-            <?php for($i=0; $i<2; $i++): ?>
-                <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--text-muted); letter-spacing:.2em; text-transform:uppercase; padding:0 40px;">Liderazgo Estoico <span style="color:var(--accent);">✱</span></span>
-                <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--text-muted); letter-spacing:.2em; text-transform:uppercase; padding:0 40px;">Sistemas de Productividad <span style="color:var(--accent);">✱</span></span>
-                <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--text-muted); letter-spacing:.2em; text-transform:uppercase; padding:0 40px;">Philosophy &amp; Execution <span style="color:var(--accent);">✱</span></span>
-                <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--text-muted); letter-spacing:.2em; text-transform:uppercase; padding:0 40px;">Decisiones de Alto Impacto <span style="color:var(--accent);">✱</span></span>
-            <?php endfor; ?>
-        </div>
-    </div>
-
-    <!-- PILLARS -->
-    <section style="padding:120px 40px; border-bottom:1px solid var(--line);">
-        <div class="da-reveal" style="margin-bottom:80px;">
-            <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--accent); letter-spacing:.25em; text-transform:uppercase;">⊜ Las tres velas</span>
-        </div>
-        <div class="da-pillars-grid da-reveal" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);">
-            <div class="da-pillar">
-                <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--accent); margin-bottom:32px; display:block;">01 ————</span>
-                <h2 style="font-size:28px; font-weight:700; margin-bottom:20px;">Leadership</h2>
-                <p style="font-size:14px; color:var(--text-muted); line-height:1.7;">Gu&iacute;a basada en principios estoicos. Navega la niebla de la infoxicaci&oacute;n con claridad.</p>
-                <a href="<?php echo site_url('/category/leadership'); ?>" style="display:inline-flex; margin-top:32px; font-size:12px; font-weight:600; color:var(--accent); text-decoration:none;">Explorar →</a>
+<main id="godly-home">
+    <!-- 1. HERO SECTION -->
+    <section class="hero-stage">
+        <div class="hero-content">
+            <div class="hero-left reveal">
+                <h2 class="manifesto-text">
+                    EL LIDERAZGO NO ES EL RUIDO QUE HACES. ES LA <span style="color:var(--accent); font-weight:600;">DIRECCI&Oacute;N</span> QUE MANTIENES 
+                    CUANDO EL MAR SE PONE DIF&Iacute;CIL.
+                </h2>
+                <h1 class="hero-title">ABORDO.</h1>
             </div>
-            <div class="da-pillar">
-                <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--accent); margin-bottom:32px; display:block;">02 ————</span>
-                <h2 style="font-size:28px; font-weight:700; margin-bottom:20px;">Growth</h2>
-                <p style="font-size:14px; color:var(--text-muted); line-height:1.7;">El viaje interior como motor de crecimiento. Herramientas para tu evoluci&oacute;n.</p>
-                <a href="<?php echo site_url('/category/growth'); ?>" style="display:inline-flex; margin-top:32px; font-size:12px; font-weight:600; color:var(--accent); text-decoration:none;">Explorar →</a>
-            </div>
-            <div class="da-pillar">
-                <span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--accent); margin-bottom:32px; display:block;">03 ————</span>
-                <h2 style="font-size:28px; font-weight:700; margin-bottom:20px;">Productivity</h2>
-                <p style="font-size:14px; color:var(--text-muted); line-height:1.7;">Sistemas de mantenimiento de alto rendimiento. Pr&aacute;ctico y sostenible.</p>
-                <a href="<?php echo site_url('/category/productivity'); ?>" style="display:inline-flex; margin-top:32px; font-size:12px; font-weight:600; color:var(--accent); text-decoration:none;">Explorar →</a>
+
+            <div class="hero-right reveal">
+                <div class="hero-image-wrap">
+                    <img src="<?php echo get_template_directory_uri(); ?>/jose_maria.jpg" alt="Jose Maria">
+                </div>
+                <div class="hero-buttons">
+                    <a href="<?php echo site_url('/about'); ?>" class="btn-secondary">Mi Manifiesto →</a>
+                    <a href="#newsletter" class="btn-primary" id="hero-cta">Subir a bordo →</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- STATEMENT -->
-    <section style="padding:140px 40px; border-bottom:1px solid var(--line);">
-        <blockquote class="da-reveal" style="font-size:clamp(30px,4.5vw,58px); font-weight:700; line-height:1.1; max-width:900px; margin:0; border:none; padding:0;">
-            &ldquo;El liderazgo no es el ruido que haces.<br>
-            Es la <span style="color:var(--accent);">direcci&oacute;n que mantienes</span><br>
-            cuando el mar se pone dif&iacute;cil.&rdquo;
-        </blockquote>
-    </section>
-
-    <!-- STATS -->
-    <div class="da-stats" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border-bottom:1px solid var(--line);">
-        <div class="da-reveal" style="background:var(--bg); padding:64px 48px;">
-            <div style="font-size:64px; font-weight:700; line-height:1; margin-bottom:12px;">2.000<span style="color:var(--accent);">+</span></div>
-            <div style="font-size:13px; color:var(--text-muted); text-transform:uppercase; font-family:'Space Mono',monospace;">Lectores</div>
-        </div>
-        <div class="da-reveal" style="background:var(--bg); padding:64px 48px;">
-            <div style="font-size:64px; font-weight:700; line-height:1; margin-bottom:12px;">52<span style="color:var(--accent);">×</span></div>
-            <div style="font-size:13px; color:var(--text-muted); text-transform:uppercase; font-family:'Space Mono',monospace;">Ediciones al a&ntilde;o</div>
-        </div>
-        <div class="da-reveal" style="background:var(--bg); padding:64px 48px;">
-            <div style="font-size:64px; font-weight:700; line-height:1; margin-bottom:12px;">100<span style="color:var(--accent);">%</span></div>
-            <div style="font-size:13px; color:var(--text-muted); text-transform:uppercase; font-family:'Space Mono',monospace;">Manual de Impacto</div>
-        </div>
-    </div>
-
-    <!-- NEWSLETTER -->
-    <section id="newsletter" style="padding:120px 40px; text-align:center;">
-        <div class="da-reveal">
-            <h2 style="font-size:54px; font-weight:700; margin-bottom:40px;">&Uacute;NETE A LA TRIPULACI&Oacute;N.</h2>
-            <div style="max-width:500px; margin: 0 auto; border: 1px solid var(--line); border-radius: 4px; overflow: hidden;">
-                <iframe src="https://josemgalarza.substack.com/embed" width="100%" height="320" style="border:none; filter: invert(1) hue-rotate(180deg);"></iframe>
-            </div>
-        </div>
-    </section>
-</div>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-    const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if(e.isIntersecting) {
-                e.target.classList.add('da-vis');
-                obs.unobserve(e.target);
+    <!-- 2. CATEGORY MARQUEE -->
+    <div class="marquee-wrap">
+        <div class="marquee-content">
+            <?php 
+            $categories = get_categories();
+            $cat_string = " | ";
+            foreach($categories as $category) {
+                $cat_string .= strtoupper($category->name) . " | ";
             }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.da-reveal').forEach(el => obs.observe(el));
-});
-</script>
+            $final_marquee = $cat_string . "DIARIO DE ABORDO | BIT&Aacute;CORA | ";
+            ?>
+            <span class="marquee-item"><?php echo str_repeat($final_marquee, 3); ?></span>
+            <span class="marquee-item"><?php echo str_repeat($final_marquee, 3); ?></span>
+        </div>
+    </div>
+
+    <!-- 3. FEATURED POSTS (THE SHARDS) -->
+    <section id="posts-wrap" style="padding: 100px 0; background: #000; text-align: center;">
+        <div class="sliced-gallery" style="height: 70vh; margin: 0 auto; width: 90%;">
+            <?php
+            $args = array('posts_per_page' => 3, 'post_status' => 'publish');
+            $featured_posts = new WP_Query($args);
+            $count = 0;
+            
+            // Fallback assets mapping
+            $fallbacks = ['leadership.png', 'growth.png', 'productivity.png'];
+
+            if ($featured_posts->have_posts()) :
+                while ($featured_posts->have_posts()) : $featured_posts->the_post();
+                    $img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                    if(!$img_url) {
+                        $img_url = get_template_directory_uri() . '/' . $fallbacks[$count % 3];
+                    }
+                    for($i=0; $i<4; $i++): // 4 slices per post
+                        $slice_index = ($count * 4) + $i;
+                        $pos = $slice_index * 9;
+                        ?>
+                        <div class="gallery-slice" 
+                             style="background-image: url('<?php echo $img_url; ?>'); background-position: <?php echo $pos; ?>% 50%;" 
+                             onclick="location.href='<?php the_permalink(); ?>'">
+                             <?php if($i === 1): ?>
+                             <span class="technical-label" style="position:absolute; bottom: 40px; left: 20px; writing-mode: vertical-rl; transform:rotate(180deg); color:var(--accent); font-size:14px; font-weight:800;">
+                                <?php the_title(); ?>
+                             </span>
+                             <?php endif; ?>
+                        </div>
+                    <?php endfor;
+                    $count++;
+                endwhile;
+                wp_reset_postdata();
+            else:
+                // Full static fallback if NO entries exist yet
+                for($f=0; $f<3; $f++):
+                    $img_url = get_template_directory_uri() . '/' . $fallbacks[$f];
+                    for($i=0; $i<4; $i++):
+                        $slice_index = ($f * 4) + $i;
+                        $pos = $slice_index * 9;
+                        ?>
+                        <div class="gallery-slice" 
+                             style="background-image: url('<?php echo $img_url; ?>'); background-position: <?php echo $pos; ?>% 50%;">
+                        </div>
+                    <?php endfor;
+                endfor;
+            endif; ?>
+        </div>
+    </section>
+
+    <!-- 4. NEWSLETTER SECTION -->
+    <section id="newsletter" style="padding:150px 40px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; text-align: center; background: #050505; position: relative; z-index: 10;">
+        <span class="technical-label" style="margin-bottom: 20px;">REGISTRO DE BIT&Aacute;CORA / SUBSTACK</span>
+        <h2 style="font-size: clamp(30px, 4.5vw, 54px); font-weight: 700; margin-bottom: 40px;">&Uacute;NETE A LA TRIPULACI&Oacute;N.</h2>
+        <div style="background: transparent; border: 1px solid var(--line); padding: 5px; position: relative;">
+            <iframe src="https://josemgalarza.substack.com/embed" width="480" height="320" 
+                    style="border: none; background: transparent; filter: invert(1) hue-rotate(180deg) contrast(1.1); transform: scale(1.05);">
+            </iframe>
+            <div style="position:absolute; bottom: 0; left: 0; right: 0; height: 30px; background: #050505; pointer-events: none;"></div>
+        </div>
+    </section>
+</main>
 
 <?php get_footer(); ?>

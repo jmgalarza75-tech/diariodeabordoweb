@@ -151,58 +151,6 @@ function antigravity_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'antigravity_customize_register' );
 
 /**
- * ── BANNER ADMIN MENU (Página de Ajustes) ──
- * Como theme.json puede ocultar el Customizer, creamos un menú visible.
- */
-function antigravity_banner_menu() {
-    add_theme_page(
-        'Banner Home',
-        'Banner Home',
-        'manage_options',
-        'antigravity-banner',
-        'antigravity_banner_page_html'
-    );
-}
-add_action('admin_menu', 'antigravity_banner_menu');
-
-function antigravity_banner_page_html() {
-    if (isset($_POST['ag_banner_submit'])) {
-        update_option('ag_marquee_fixed_text', sanitize_text_field($_POST['marquee_fixed_text']));
-        update_option('ag_marquee_show_categories', isset($_POST['marquee_show_categories']) ? 'yes' : 'no');
-    }
-    
-    $fixed_text = get_option('ag_marquee_fixed_text', 'DIARIO DE ABORDO | BIT&Aacute;CORA | ');
-    $show_cats = get_option('ag_marquee_show_categories', 'yes');
-    ?>
-    <div class="wrap">
-        <h1>Ajustes del Banner (Texto Corredizo)</h1>
-        <form method="post" action="">
-            <table class="form-table">
-                <tr>
-                    <th scope="row"><label for="marquee_fixed_text">Texto Fijo del Banner</label></th>
-                    <td>
-                        <input type="text" name="marquee_fixed_text" id="marquee_fixed_text" value="<?php echo esc_attr($fixed_text); ?>" style="width:100%; max-width:600px;">
-                        <p class="description">Este es el texto que se repetirá en la banda inferior.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Categorías Dinámicas</th>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="marquee_show_categories" value="1" <?php checked($show_cats, 'yes'); ?>>
-                            Extraer e incluir Nombres de Categorías (como Uncategorized) antes del texto fijo.
-                        </label>
-                    </td>
-                </tr>
-            </table>
-            <input type="hidden" name="ag_banner_submit" value="1">
-            <?php submit_button('Guardar Banner'); ?>
-        </form>
-    </div>
-    <?php
-}
-
-/**
  * ── INJECT CUSTOMIZER CSS ──
  */
 function antigravity_customize_css() {
@@ -221,20 +169,6 @@ add_action( 'wp_head', 'antigravity_customize_css' );
  * Para que todo funcione "Out of the box".
  */
 function antigravity_setup_content() {
-    // 0. Crear Categorías de Blog si no existen
-    $blog_categories = ['Leadership', 'Growth', 'Sistemas', 'Arquitectura', 'Estrategia', 'Books'];
-    foreach ($blog_categories as $cat_name) {
-        if (!term_exists($cat_name, 'category')) {
-            wp_insert_term($cat_name, 'category');
-        }
-    }
-
-    // Renombrar 'Uncategorized' (Categoría por defecto ID 1) a 'Bitácora'
-    wp_update_term(1, 'category', array(
-        'name' => 'Bitácora',
-        'slug' => 'bitacora'
-    ));
-
     // 1. Crear Menú si no existe
     $menu_name = 'Navigational Log Main';
     $menu_exists = wp_get_nav_menu_object($menu_name);
@@ -289,8 +223,6 @@ function antigravity_setup_content() {
         }
     }
 }
-// Removemos el gancho clásico de activación y lo reemplazamos por el hook 'init'
-// de forma temporal para asegurar que se ejecute la próxima vez que cargues la página
-add_action('init', 'antigravity_setup_content');
+add_action('after_switch_theme', 'antigravity_setup_content');
 
 add_action( 'init', 'antigravity_register_patterns' );
