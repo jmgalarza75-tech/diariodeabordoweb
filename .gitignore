@@ -1,0 +1,11 @@
+﻿node_modules/
+dist/
+tmp/
+.gemini/
+*.log
+wordpress-paste.html
+final_wordpress_godly_paste.html
+deploy*
+*.zip
+*.tar
+*.crdownload

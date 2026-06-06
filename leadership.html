@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEADERSHIP / DIARIO DE ABORDO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage-mode">
+    <div id="app">
+        <div class="vertical-line"></div>
+        <nav id="da-nav">
+          <!-- Handled by main.js module on home, but let's keep a consistent fallback here -->
+          <a href="index.html" class="technical-label" style="text-decoration:none;color:var(--fg);">INDEX</a>
+          <div class="links">
+              <a href="leadership.html" class="technical-label">LEADERSHIP</a>
+              <a href="growth.html" class="technical-label">GROWTH</a>
+              <a href="productivity.html" class="technical-label">SISTEMAS</a>
+          </div>
+        </nav>
+
+        <main class="page-content reveal">
+          <div class="hero-content">
+            <div class="hero-left">
+                <span class="technical-label">SEMANA 01 / OWNERSHIP RADICAL</span>
+                <h1>TU EQUIPO NO ES MEDIOCRE. T&Uacute; LO ERES.</h1>
+                
+                <div class="body-text">
+                    <p>Si algo falla, es tu culpa. Si algo sale bien, es gracias a ellos. <strong>El liderazgo t&aacute;ctico requiere la eliminaci&oacute;n total de las excusas de tu vocabulario.</strong></p>
+                    
+                    <h2>CADENA DE MANDO</h2>
+                    <span class="premium-tag">PREMIUM CONTENT</span>
+                    <p>Instrucciones de despliegue:</p>
+                    <ul style="padding-left:24px;margin-bottom:60px;">
+                        <li><strong>Identificaci&oacute;n de Fallo:</strong> Deja de buscar culpables. El fallo est&aacute; en tu comunicaci&oacute;n o en tu supervisi&oacute;n.</li>
+                        <li><strong>Acci&oacute;n Correctiva:</strong> Asume el error delante de tu equipo y asume el coste. Solo as&iacute; ganar&aacute;s el derecho a liderarles.</li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </main>
+    </div>
+    <script>
+        const obs = new IntersectionObserver((es) => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')));
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>

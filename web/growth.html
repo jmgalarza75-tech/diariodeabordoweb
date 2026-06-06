@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTOICISMO DE TRINCHERA / DIARIO DE ABORDO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .article-hero { height: 70vh; display: flex; align-items: flex-end; padding: 60px 40px; position: relative; overflow: hidden; }
+        .article-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, #000 0%, transparent 100%); z-index: 1; }
+        .hero-bg { position: absolute; inset: 0; background-image: url('growth.png'); background-size: cover; background-position: center; filter: grayscale(1) brightness(0.4); transform: scale(1.1); transition: transform 0.8s ease-out; }
+        .article-hero:hover .hero-bg { transform: scale(1); }
+        .hero-content { position: relative; z-index: 2; width: 100%; }
+
+        .content-body { max-width: 800px; margin: 100px auto; padding: 40px; }
+        .editorial-text { font-size: 26px; line-height: 1.5; color: var(--fg); font-weight: 300; border-left: 2px solid var(--accent); padding-left: 40px; margin-bottom: 120px; }
+        .editorial-text strong { font-weight: 700; color: var(--accent); }
+
+        .premium-gate {
+            background: rgba(20,20,20,0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--line);
+            padding: 80px 60px;
+            margin-top: 100px;
+            position: relative;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+        }
+        .premium-label { background: var(--accent); color: #000; padding: 4px 12px; font-weight: 700; font-family: var(--font-mono); font-size: 11px; margin-bottom: 40px; display: inline-block; }
+        .tactical-list { list-style: none; margin-top: 60px; }
+        .tactical-list li { margin-bottom: 40px; padding-left: 40px; border-left: 1px solid var(--line); position: relative; }
+        .tactical-list li::before { content: attr(data-step); position: absolute; left: -20px; top: 0; font-family: var(--font-mono); font-size: 10px; color: var(--accent); background: #000; padding: 0 10px; }
+        .tactical-list h4 { font-size: 20px; font-weight: 700; color: var(--fg); margin-bottom: 12px; text-transform: uppercase; letter-spacing: .1em; }
+        .tactical-list p { font-size: 16px; color: var(--fg-dim); line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="vertical-line"></div>
+        <nav id="da-nav">
+            <a href="index.html" class="da-brand-logo">
+                <div class="brand-text">
+                    <span>Diario de</span>
+                    <span><em>Abordo</em></span>
+                </div>
+            </a>
+            <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+            <div class="links" id="nav-links">
+              <a href="leadership.html" class="technical-label">Leadership</a>
+              <a href="growth.html" class="technical-label">Growth</a>
+              <a href="productivity.html" class="technical-label">Sistemas</a>
+              <a href="blog.html" class="technical-label">Blog</a>
+              <a href="about.html" class="technical-label">Qui&eacute;n Soy</a>
+              <a href="index.html#newsletter" class="btn-sub">Suscribirse</a>
+          </div>
+        </nav>
+
+        <header class="article-hero">
+            <div class="hero-bg"></div>
+            <main class="page-content reveal">
+          <div class="container hero-content">
+            <div class="hero-left">
+                <span class="technical-label" style="color:var(--accent); letter-spacing: 0.3em; font-family:var(--font-mono); font-size: 13px; display:block; margin-bottom: 20px;">SEMANA 02 // ESTOICISMO DE TRINCHERA</span>
+                <h1 class="hero-title">ESTOICISMO<br>DE TRINCHERA.</h1>
+                
+                <div class="body-text" style="max-width: 650px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.85);">
+                    <p style="margin-bottom: 30px;">La mayor&iacute;a de los humanos viven en el pasado. Los dem&aacute;s, en el futuro. <strong style="color:var(--fg);">T&uacute; vives en el ahora, o mueres.</strong></p>
+                    <p style="margin-bottom: 40px; border-left: 2px solid var(--accent); padding-left: 30px; font-style: italic; color: #fff;">"Si el sistema cae, t&uacute; te mantienes. Si la suerte te abandona, tu disciplina la sustituye. T&uacute; eres la ciudadela."</p>
+
+                    <h2 style="font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 0.2em; color: var(--accent); margin-top: 60px; margin-bottom: 20px;">PROTOCOLO DE ENTORNO POST-COLAPSO</h2>
+                    <span class="premium-tag" style="background: var(--accent); color: #000; padding: 4px 12px; font-size: 10px; font-weight: 700; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.1em;">PREMIUM CONTENT</span>
+                    
+                    <ul style="list-style: none; padding: 0; margin-top: 40px;">
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+                            <strong style="color: var(--accent); display: block; margin-bottom: 5px;">01 DUDA DEL PLACER</strong>
+                            Si algo es f&aacute;cil, es in&uacute;til. Si algo duele, es progreso real.
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+                            <strong style="color: var(--accent); display: block; margin-bottom: 5px;">02 MUERTE AL EGO</strong>
+                            No eres lo que dices, eres lo que haces cuando nadie te ve en la trinchera.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </main>
+        </header>
+
+        <section class="content-body">
+            <div class="editorial-text reveal">
+                La realidad no te debe nada. Preocuparse por lo que no depende de ti es regalar tu <strong>RAM mental</strong> al enemigo. <strong>M Market</strong> se mueve. T&uacute; decides si te mueves con &eacute;l o te congelas.
+            </div>
+
+            <div class="premium-gate reveal">
+                <span class="premium-label">DEEP PREMIUM / ACCESO RESTRINGIDO</span>
+                <h2 style="font-size: 38px; color: #fff; font-weight: 700; line-height: 1.1;">DICOTOM&Iacute;A DEL CONTROL: INSTRUCCIONES DE RESILIENCIA T&Aacute;CTICA</h2>
+                
+                <ul class="tactical-list">
+                    <li data-step="01">
+                        <h4>Auditor&iacute;a de Hechos</h4>
+                        <p>Haz una lista de los desastres actuales. Elimina los adjetivos. Solo datos. La objetividad es un arma.</p>
+                    </li>
+                    <li data-step="02">
+                        <h4>Aislamiento de Control</h4>
+                        <p>Marca qu&eacute; puedes cambiar en las pr&oacute;ximas 2 horas. El resto es ruido. Ignora el ruido o morir&aacute;s con &eacute;l.</p>
+                    </li>
+                    <li data-step="03">
+                        <h4>Escudo Mental (Amor Fati)</h4>
+                        <p>Aceptaci&oacute;n radical del obst&aacute;culo como combustible. Lo que antes era un impedimento ahora es el camino. No solo lo toleras, lo deseas.</p>
+                    </li>
+                    <li data-step="04">
+                        <h4>Ejecuci&oacute;n Fr&iacute;a</h4>
+                        <p>Frenar la par&aacute;lisis por an&aacute;lisis. Si no hay control, hay acci&oacute;n pura. Convertir la ansiedad en movimiento cin&eacute;tico inmediato.</p>
+                    </li>
+                    <li data-step="05">
+                        <h4>Reporte de Da&ntilde;os</h4>
+                        <p>An&aacute;lisis post-tormenta sin ego. ¿Qu&eacute; sistema fall&oacute;? ¿Qu&eacute; redundancia necesitamos? La crisis es el mejor consultor de ingeniería.</p>
+                    </li>
+                </ul>
+            </div>
+        <section id="newsletter" style="padding:150px 40px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; text-align: center; background: #050505;">
+            <span class="technical-label" style="margin-bottom: 20px;">REGISTRO DE BIT&Aacute;CORA / SUBSTACK</span>
+            <h2 style="font-size: clamp(30px, 4.5vw, 54px); font-weight: 700; margin-bottom: 40px;">&Uacute;NETE A LA TRIPULACI&Oacute;N.</h2>
+            <div style="background: transparent; border: 1px solid var(--line); padding: 5px; position: relative;">
+                <iframe src="https://josemgalarza.substack.com/embed" width="480" height="320" 
+                        style="border: none; background: transparent; filter: invert(1) hue-rotate(180deg) contrast(1.1); transform: scale(1.05);">
+                </iframe>
+                <div style="position:absolute; bottom: 0; left: 0; right: 0; height: 30px; background: #050505; pointer-events: none;"></div>
+            </div>
+        </section>
+    </div>
+    <script src="sonar.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const toggle = document.getElementById('nav-toggle');
+        const menu = document.getElementById('nav-links');
+        if(toggle && menu) {
+            toggle.addEventListener('click', () => {
+                toggle.classList.toggle('active');
+                menu.classList.toggle('active');
+            });
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    toggle.classList.remove('active');
+                    menu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
