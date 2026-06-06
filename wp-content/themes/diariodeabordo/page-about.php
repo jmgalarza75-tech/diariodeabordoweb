@@ -35,7 +35,7 @@ get_header(); ?>
 <main class="page-content reveal">
     <header class="about-header">
         <div class="portrait-wrap">
-            <img src="<?php echo get_template_directory_uri(); ?>/jose_maria.jpg" class="portrait-img" alt="Jose Maria Galarza">
+            <!-- Photo removed -->
         </div>
         <div class="header-content">
             <span class="technical-label" style="color:var(--accent); margin-bottom: 24px; display: block;">ESTRATEGIA &middot; LIDERAZGO &middot; SISTEMAS</span>

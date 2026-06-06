@@ -18,7 +18,7 @@ get_header(); ?>
 
             <div class="hero-right reveal">
                 <div class="hero-image-wrap">
-                    <img src="<?php echo get_template_directory_uri(); ?>/jose_maria.jpg" alt="Jose Maria">
+                    <!-- Photo removed -->
                 </div>
                 <div class="hero-buttons">
                     <a href="<?php echo site_url('/about'); ?>" class="btn-secondary">Mi Manifiesto →</a>
