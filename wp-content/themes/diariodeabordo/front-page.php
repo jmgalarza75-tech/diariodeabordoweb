@@ -6,7 +6,7 @@ get_header(); ?>
 
 <main id="godly-home">
     <!-- 1. HERO SECTION -->
-    <section class="hero-stage">
+    <section class="hero-stage" style="background-image: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 100%), url('<?php echo get_template_directory_uri(); ?>/hero-bg.jpg'); background-size: cover; background-position: center;">
         <div class="hero-content">
             <div class="hero-left reveal">
                 <h2 class="manifesto-text">
