@@ -47,10 +47,10 @@ function antigravity_enqueue_assets() {
     wp_enqueue_style( 'ag-fonts', 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap', [], null );
 
     // Estilo Principal
-    wp_enqueue_style( 'ag-main-style', get_stylesheet_uri(), [], $version );
+    wp_enqueue_style( 'ag-main-style', get_stylesheet_uri(), [], $css_version );
 
     // Scripts Críticos (Detección automática)
-    wp_enqueue_script( 'antigravity-main', get_template_directory_uri() . '/main.js', [], $version, true );
+    wp_enqueue_script( 'antigravity-main', get_template_directory_uri() . '/main.js', [], $js_version, true );
     
     // Localize para Paridad Total
     wp_localize_script( 'antigravity-main', 'agData', [
