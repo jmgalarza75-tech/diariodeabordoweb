@@ -48,25 +48,71 @@ get_header(); ?>
         width: 100%;
         color: var(--accent);
         perspective: 600px;
-        background: transparent;
+        background: #000;
         margin: 50px 0;
         overflow: hidden;
         z-index: 20;
     }
 
+    /* CSS Starry Background */
+    .stars-bg {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100%; height: 100%;
+        background: transparent;
+        z-index: -1;
+        background-image: 
+            radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+            radial-gradient(1.5px 1.5px at 50px 160px, #ddd, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 160px 120px, #ddd, rgba(0,0,0,0)),
+            radial-gradient(1.5px 1.5px at 200px 180px, #fff, rgba(0,0,0,0));
+        background-repeat: repeat;
+        background-size: 250px 250px;
+        opacity: 0.5;
+        transition: opacity 2s ease;
+    }
+    
+    .star-wars-container.is-playing .stars-bg {
+        opacity: 1;
+        animation: stars-drift 100s linear infinite;
+    }
+
+    @keyframes stars-drift {
+        from { background-position: 0 0; }
+        to { background-position: -500px 1000px; }
+    }
+
+    /* Overlay Start Button */
+    .crawl-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0,0,0,0.8);
+        z-index: 50;
+        transition: opacity 1s ease;
+    }
+
     .manifesto-text { 
         position: absolute;
         bottom: -100%; /* Empieza escondido abajo */
-        font-size: clamp(20px, 3vw, 36px); 
+        font-size: clamp(24px, 3.5vw, 44px); /* Ligeramente más grande */
         font-weight: 700; 
         line-height: 1.8; 
-        max-width: 800px; 
+        max-width: 1300px; /* TEXTO MAS ANCHO */
+        width: 90%;
         text-align: justify;
         color: var(--accent);
         transform-origin: 50% 100%;
-        animation: crawl 40s linear infinite;
-        /* Drop shadow para que resalte más y parezca brillante */
         text-shadow: 0 0 10px rgba(201,168,76, 0.5);
+    }
+    
+    .star-wars-container.is-playing .manifesto-text {
+        animation: crawl 50s linear infinite;
     }
     
     @keyframes crawl {
@@ -131,7 +177,15 @@ get_header(); ?>
     </header>
 
     <section class="manifesto-section reveal">
-        <div class="star-wars-container">
+        <div class="star-wars-container" id="sw-container">
+            <!-- Capa de Estrellas -->
+            <div class="stars-bg"></div>
+            
+            <!-- Botón de Inicio -->
+            <div class="crawl-overlay" id="crawl-overlay">
+                <button id="start-crawl-btn" class="btn-primary" style="background:var(--accent); color:#000; font-family: var(--font-mono); letter-spacing: 0.1em; cursor: pointer; border: none;">INICIAR MANIFIESTO</button>
+            </div>
+
             <div class="manifesto-text">
                 <p>Creemos que toda persona lleva dentro una direcci&oacute;n, una fuerza y una luz propia. Nuestro trabajo no es imponer un camino, sino acompa&ntilde;ar a cada persona para que descubra el suyo con mayor claridad, confianza y verdad.</p>
                 
@@ -177,3 +231,22 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('start-crawl-btn');
+        var overlay = document.getElementById('crawl-overlay');
+        var container = document.getElementById('sw-container');
+
+        if (btn && overlay && container) {
+            btn.addEventListener('click', function() {
+                // Ocultar overlay
+                overlay.style.opacity = '0';
+                setTimeout(function() { overlay.style.display = 'none'; }, 1000);
+                
+                // Iniciar animaciones
+                container.classList.add('is-playing');
+            });
+        }
+    });
+</script>
