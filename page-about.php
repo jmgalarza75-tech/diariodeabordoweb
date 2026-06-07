@@ -44,12 +44,12 @@ get_header(); ?>
         display: flex;
         justify-content: center;
         position: relative;
-        height: 60vh;
+        height: 70vh;
         width: 100%;
         color: var(--accent);
-        perspective: 600px;
+        perspective: 800px; /* Perspectiva más realista para evitar el aplastamiento */
         background: #000;
-        margin: 50px 0;
+        margin: 0;
         overflow: hidden;
         z-index: 20;
     }
@@ -77,7 +77,7 @@ get_header(); ?>
     
     .star-wars-container.is-playing .stars-bg {
         opacity: 1;
-        animation: stars-drift 100s linear infinite;
+        animation: stars-drift 60s linear infinite;
     }
 
     @keyframes stars-drift {
@@ -99,34 +99,33 @@ get_header(); ?>
 
     .manifesto-text { 
         position: absolute;
-        top: 80%; /* Start closer to the viewport to eliminate the huge blank gap */
-        font-size: clamp(24px, 3.5vw, 44px); /* Ligeramente más grande */
+        left: 50%; /* Centrado forzado */
+        top: 100%; /* Empieza exactamente debajo del contenedor */
+        font-size: clamp(30px, 5vw, 60px); /* Texto mucho más GRANDE */
         font-weight: 700; 
-        line-height: 1.8; 
-        max-width: 1300px; /* TEXTO MAS ANCHO */
-        width: 90%;
+        line-height: 1.6; 
+        width: 95%; /* Ocupa todo el ancho */
+        max-width: 1400px;
         text-align: justify;
-        color: var(--accent);
+        color: #e5b13a; /* Amarillo clásico o dorado */
         transform-origin: 50% 100%;
-        text-shadow: 0 0 10px rgba(201,168,76, 0.5);
+        transform: translateX(-50%);
+        text-shadow: 0 0 10px rgba(229, 177, 58, 0.5);
     }
     
     .star-wars-container.is-playing .manifesto-text {
-        animation: crawl 40s linear forwards; /* Reduced to 40s, forwards so it stays at the end */
+        animation: crawl 45s linear forwards;
     }
     
     @keyframes crawl {
         0% {
-            top: 80%;
-            transform: rotateX(30deg) scale(1);
-            opacity: 0;
-        }
-        5% {
+            top: 100%;
+            transform: translateX(-50%) rotateX(20deg) translateZ(0);
             opacity: 1;
         }
         100% {
-            top: -100%;
-            transform: rotateX(45deg) scale(0.4);
+            top: -200%; /* Se desplaza hacia arriba y lejos */
+            transform: translateX(-50%) rotateX(25deg) translateZ(-2500px);
             opacity: 0;
         }
     }
