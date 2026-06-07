@@ -37,30 +37,45 @@ get_header(); ?>
         -webkit-text-fill-color: transparent;
     }
 
-    /* Manifesto Styling */
+    /* Star Wars Crawl Effect */
     .manifesto-section { padding: 120px 20px; background: #000; position: relative; z-index: 6; display: flex; justify-content: center; flex-direction: column; align-items: center;}
+    .star-wars-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        height: 80vh;
+        color: #e5b13a; /* Amarillo Star Wars o var(--accent) */
+        overflow: hidden;
+        perspective: 400px;
+        background: #000;
+        margin: 50px 0;
+    }
+
     .manifesto-text { 
-        font-size: clamp(18px, 2.5vw, 28px); 
-        font-weight: 300; 
-        line-height: 1.8; 
-        max-width: 750px; 
-        color: rgba(255,255,255,0.85); 
+        position: absolute;
+        top: 100%;
+        font-size: clamp(24px, 4vw, 40px); 
+        font-weight: 700; 
+        line-height: 1.5; 
+        max-width: 900px; 
+        text-align: justify;
+        color: var(--accent);
+        transform-origin: 50% 100%;
+        animation: crawl 40s linear infinite;
     }
     
-    .manifesto-text p { margin-bottom: 2rem; }
-
-    /* Drop Cap (Letra Capital) */
-    .manifesto-text p:first-of-type::first-letter {
-        font-family: var(--font-mono, 'Space Mono', monospace);
-        color: var(--accent);
-        font-size: 110px;
-        line-height: 80px;
-        float: left;
-        padding-top: 4px;
-        padding-right: 15px;
-        padding-left: 3px;
-        font-weight: 700;
+    @keyframes crawl {
+        0% {
+            top: 100%;
+            transform: rotateX(20deg) translateZ(0);
+        }
+        100% {
+            top: -150%;
+            transform: rotateX(25deg) translateZ(-2000px);
+        }
     }
+
+    .manifesto-text p { margin-bottom: 2rem; }
 
     /* Glassmorphism Cards */
     .method-block { 
@@ -69,7 +84,7 @@ get_header(); ?>
         gap: 20px; 
         max-width: 1200px;
         width: 100%;
-        margin-top: 100px; 
+        margin: 50px auto 100px auto; 
         padding: 0 20px;
     }
     
@@ -106,22 +121,24 @@ get_header(); ?>
     </header>
 
     <section class="manifesto-section reveal">
-        <div class="manifesto-text">
-            <p>Creemos que toda persona lleva dentro una direcci&oacute;n, una fuerza y una luz propia. Nuestro trabajo no es imponer un camino, sino acompa&ntilde;ar a cada persona para que descubra el suyo con mayor claridad, confianza y verdad.</p>
-            
-            <p>Creemos en el crecimiento personal como un proceso profundo, consciente y sostenido. No se trata de correr m&aacute;s, sino de avanzar con sentido; no de parecer, sino de transformar desde dentro.</p>
-            
-            <p>Somos ancla cuando hace falta estabilidad. Ofrecemos un espacio seguro para parar, escuchar, ordenar el ruido y volver al centro.</p>
-            
-            <p>Somos br&uacute;jula cuando llega el momento de elegir. Ayudamos a convertir la confusi&oacute;n en direcci&oacute;n, la intenci&oacute;n en decisi&oacute;n y el aprendizaje en acci&oacute;n.</p>
-            
-            <p>Somos faro cuando el camino se vuelve incierto. Iluminamos posibilidades, abrimos perspectiva y recordamos que incluso en la duda existe una forma de avanzar con conciencia.</p>
-            
-            <p>Creemos en un aprendizaje que une reflexi&oacute;n y acci&oacute;n. Porque crecer no es solo comprenderse mejor, sino atreverse a vivir de forma m&aacute;s coherente con lo que uno es y con la vida que quiere construir.</p>
-            
-            <p>Aqu&iacute; no venimos a encajar en moldes ajenos. Venimos a desarrollar criterio, fortalecer la identidad, expandir la mirada y construir una vida con prop&oacute;sito, equilibrio y presencia.</p>
-            
-            <p>Este es nuestro manifiesto: acompa&ntilde;ar procesos reales, honrar el ritmo de cada persona y convertir el crecimiento personal en una pr&aacute;ctica viva, valiente y transformadora.</p>
+        <div class="star-wars-container">
+            <div class="manifesto-text">
+                <p>Creemos que toda persona lleva dentro una direcci&oacute;n, una fuerza y una luz propia. Nuestro trabajo no es imponer un camino, sino acompa&ntilde;ar a cada persona para que descubra el suyo con mayor claridad, confianza y verdad.</p>
+                
+                <p>Creemos en el crecimiento personal como un proceso profundo, consciente y sostenido. No se trata de correr m&aacute;s, sino de avanzar con sentido; no de parecer, sino de transformar desde dentro.</p>
+                
+                <p>Somos ancla cuando hace falta estabilidad. Ofrecemos un espacio seguro para parar, escuchar, ordenar el ruido y volver al centro.</p>
+                
+                <p>Somos br&uacute;jula cuando llega el momento de elegir. Ayudamos a convertir la confusi&oacute;n en direcci&oacute;n, la intenci&oacute;n en decisi&oacute;n y el aprendizaje en acci&oacute;n.</p>
+                
+                <p>Somos faro cuando el camino se vuelve incierto. Iluminamos posibilidades, abrimos perspectiva y recordamos que incluso en la duda existe una forma de avanzar con conciencia.</p>
+                
+                <p>Creemos en un aprendizaje que une reflexi&oacute;n y acci&oacute;n. Porque crecer no es solo comprenderse mejor, sino atreverse a vivir de forma m&aacute;s coherente con lo que uno es y con la vida que quiere construir.</p>
+                
+                <p>Aqu&iacute; no venimos a encajar en moldes ajenos. Venimos a desarrollar criterio, fortalecer la identidad, expandir la mirada y construir una vida con prop&oacute;sito, equilibrio y presencia.</p>
+                
+                <p>Este es nuestro manifiesto: acompa&ntilde;ar procesos reales, honrar el ritmo de cada persona y convertir el crecimiento personal en una pr&aacute;ctica viva, valiente y transformadora.</p>
+            </div>
         </div>
 
         <div class="method-block reveal">
