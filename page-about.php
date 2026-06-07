@@ -124,21 +124,15 @@ get_header(); ?>
     }
     
     .star-wars-container.is-playing .manifesto-text {
-        animation: crawl 120s linear forwards;
-    }
-
-    /* Permite pausar el texto al pasar o mantener el ratón encima */
-    .star-wars-container.is-playing .manifesto-text:hover {
-        animation-play-state: paused;
-        cursor: grab;
+        animation: crawl 100s linear forwards;
     }
     
     @keyframes crawl {
         0% {
-            top: 100%;
+            transform: translateY(0%);
         }
         100% {
-            top: -600%; /* Sube lo suficiente para que todo el texto largo desaparezca */
+            transform: translateY(-700%); /* Usamos transform por rendimiento (60fps) */
         }
     }
 
