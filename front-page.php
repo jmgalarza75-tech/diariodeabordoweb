@@ -75,9 +75,18 @@ get_header(); ?>
                          <!-- Overlay oscuro para que el texto resalte -->
                          <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.9) 100%); pointer-events:none;"></div>
                          
-                         <!-- Título vertical del post -->
-                         <span class="technical-label" style="position:absolute; bottom: 40px; left: 50%; transform: translateX(-50%) rotate(180deg); writing-mode: vertical-rl; color:var(--accent); font-size: clamp(14px, 1.2vw, 18px); font-weight:800; letter-spacing: 0.1em; text-transform: uppercase; text-shadow: 0 0 10px rgba(0,0,0,0.8); white-space: nowrap;">
-                            <?php echo get_the_date('d.m.Y'); ?> — <?php the_title(); ?>
+                         <!-- Título vertical del post (3 líneas) -->
+                         <?php
+                            $title = get_the_title();
+                            $words = explode(' ', $title);
+                            $half = ceil(count($words) / 2);
+                            $line1 = implode(' ', array_slice($words, 0, $half));
+                            $line2 = implode(' ', array_slice($words, $half));
+                         ?>
+                         <span class="technical-label" style="position:absolute; bottom: 40px; left: 50%; transform: translateX(-50%) rotate(180deg); writing-mode: vertical-rl; color:var(--accent); font-size: clamp(14px, 1.2vw, 18px); font-weight:800; letter-spacing: 0.1em; text-transform: uppercase; text-shadow: 0 0 10px rgba(0,0,0,0.8); line-height: 1.5; text-align: left;">
+                            <?php echo esc_html($line1); ?><br>
+                            <?php echo esc_html($line2); ?><br>
+                            <span style="opacity: 0.6; font-size: 0.8em; margin-top: 20px; display: inline-block;"><?php echo get_the_date('d.m.Y'); ?></span>
                          </span>
                     </div>
                 <?php 
