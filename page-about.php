@@ -45,10 +45,22 @@ get_header(); ?>
     </header>
 
     <section class="manifesto-section reveal">
-        <div class="manifesto-text">
-            No creo en la motivaci&oacute;n barata ni en los manuales de autoayuda. Creo en la <strong>Ingenier&iacute;a de Liderazgo</strong>.
+        <div class="manifesto-text" style="font-size: clamp(18px, 2.5vw, 28px);">
+            Creemos que toda persona lleva dentro una direcci&oacute;n, una fuerza y una luz propia. Nuestro trabajo no es imponer un camino, sino acompa&ntilde;ar a cada persona para que descubra el suyo con mayor claridad, confianza y verdad.
             <br><br>
-            Cada domingo, entrego instrucciones de mando para aquellos que han decidido dejar de ser tripulantes y empezar a ser los <strong>arquitectos de su propia ejecuci&oacute;n</strong>.
+            Creemos en el crecimiento personal como un proceso profundo, consciente y sostenido. No se trata de correr m&aacute;s, sino de avanzar con sentido; no de parecer, sino de transformar desde dentro.
+            <br><br>
+            Somos ancla cuando hace falta estabilidad. Ofrecemos un espacio seguro para parar, escuchar, ordenar el ruido y volver al centro.
+            <br><br>
+            Somos br&uacute;jula cuando llega el momento de elegir. Ayudamos a convertir la confusi&oacute;n en direcci&oacute;n, la intenci&oacute;n en decisi&oacute;n y el aprendizaje en acci&oacute;n.
+            <br><br>
+            Somos faro cuando el camino se vuelve incierto. Iluminamos posibilidades, abrimos perspectiva y recordamos que incluso en la duda existe una forma de avanzar con conciencia.
+            <br><br>
+            Creemos en un aprendizaje que une reflexi&oacute;n y acci&oacute;n. Porque crecer no es solo comprenderse mejor, sino atreverse a vivir de forma m&aacute;s coherente con lo que uno es y con la vida que quiere construir.
+            <br><br>
+            Aqu&iacute; no venimos a encajar en moldes ajenos. Venimos a desarrollar criterio, fortalecer la identidad, expandir la mirada y construir una vida con prop&oacute;sito, equilibrio y presencia.
+            <br><br>
+            Este es nuestro manifiesto: acompa&ntilde;ar procesos reales, honrar el ritmo de cada persona y convertir el crecimiento personal en una pr&aacute;ctica viva, valiente y transformadora.
         </div>
 
         <div class="method-block reveal">
