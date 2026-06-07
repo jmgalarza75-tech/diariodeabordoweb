@@ -29,8 +29,6 @@ get_header(); ?>
                 <span class="meta" style="position: relative; z-index: 20; font-family: var(--font-mono); font-size: 11px; color: var(--accent); pointer-events: none;">
                     VIEW_LOG &rarr;
                 </span>
-                    VIEW_LOG &rarr;
-                </span>
             </article>
         <?php endwhile; else : ?>
             <p style="text-align: center; width: 100%;"><?php _e( 'No hay entradas disponibles en este momento.', 'diario-de-abordo' ); ?></p>
