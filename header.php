@@ -3,6 +3,15 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+    // Fallback: Generar meta description dinámica desde el extracto si no hay plugin SEO
+    if (is_single() && !has_action('wp_head', 'wpseo_head')) {
+        $excerpt = get_the_excerpt();
+        if ($excerpt) {
+            echo '<meta name="description" content="' . esc_attr(wp_strip_all_tags($excerpt)) . '">' . "\n";
+        }
+    }
+    ?>
     <?php wp_head(); ?>
     <style>
         /* ── DYNAMIC ASSET PARITY: Ensure correct image URLs for templates ── */
