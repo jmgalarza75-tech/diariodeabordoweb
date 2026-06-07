@@ -49,15 +49,16 @@ get_header(); ?>
         </div>
     </div>
 
-    <!-- 3. FEATURED POSTS (THE SHARDS) -->
+    <!-- 3. LATEST POSTS (ACCORDION) -->
     <section id="posts-wrap" style="padding: 100px 0; background: #000; text-align: center;">
         <div class="sliced-gallery" style="height: 70vh; margin: 0 auto; width: 90%;">
             <?php
-            $args = array('posts_per_page' => 3, 'post_status' => 'publish');
+            // Obtener las últimas 8 entradas del blog
+            $args = array('posts_per_page' => 8, 'post_status' => 'publish');
             $featured_posts = new WP_Query($args);
             $count = 0;
             
-            // Fallback assets mapping
+            // Fallbacks si la entrada no tiene foto asignada
             $fallbacks = ['leadership.png', 'growth.png', 'productivity.png'];
 
             if ($featured_posts->have_posts()) :
@@ -66,36 +67,26 @@ get_header(); ?>
                     if(!$img_url) {
                         $img_url = get_template_directory_uri() . '/' . $fallbacks[$count % 3];
                     }
-                    for($i=0; $i<4; $i++): // 4 slices per post
-                        $slice_index = ($count * 4) + $i;
-                        $pos = $slice_index * 9;
-                        ?>
-                        <div class="gallery-slice" 
-                             style="background-image: url('<?php echo $img_url; ?>'); background-position: <?php echo $pos; ?>% 50%;" 
-                             onclick="location.href='<?php the_permalink(); ?>'">
-                             <?php if($i === 1): ?>
-                             <span class="technical-label" style="position:absolute; bottom: 40px; left: 20px; writing-mode: vertical-rl; transform:rotate(180deg); color:var(--accent); font-size:14px; font-weight:800;">
-                                <?php the_title(); ?>
-                             </span>
-                             <?php endif; ?>
-                        </div>
-                    <?php endfor;
-                    $count++;
+                    ?>
+                    <div class="gallery-slice" 
+                         style="background-image: url('<?php echo $img_url; ?>'); background-size: cover; background-position: center;" 
+                         onclick="location.href='<?php the_permalink(); ?>'">
+                         
+                         <!-- Overlay oscuro para que el texto resalte -->
+                         <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.9) 100%); pointer-events:none;"></div>
+                         
+                         <!-- Título vertical del post -->
+                         <span class="technical-label" style="position:absolute; bottom: 40px; left: 50%; transform: translateX(-50%) rotate(180deg); writing-mode: vertical-rl; color:var(--accent); font-size: clamp(14px, 1.2vw, 18px); font-weight:800; letter-spacing: 0.1em; text-transform: uppercase; text-shadow: 0 0 10px rgba(0,0,0,0.8); white-space: nowrap;">
+                            <?php echo get_the_date('d.m.Y'); ?> — <?php the_title(); ?>
+                         </span>
+                    </div>
+                <?php 
+                $count++;
                 endwhile;
                 wp_reset_postdata();
             else:
-                // Full static fallback if NO entries exist yet
-                for($f=0; $f<3; $f++):
-                    $img_url = get_template_directory_uri() . '/' . $fallbacks[$f];
-                    for($i=0; $i<4; $i++):
-                        $slice_index = ($f * 4) + $i;
-                        $pos = $slice_index * 9;
-                        ?>
-                        <div class="gallery-slice" 
-                             style="background-image: url('<?php echo $img_url; ?>'); background-position: <?php echo $pos; ?>% 50%;">
-                        </div>
-                    <?php endfor;
-                endfor;
+                // Fallback si no hay entradas en el blog
+                echo '<h3 style="color:#fff;">No hay entradas en la bitácora aún.</h3>';
             endif; ?>
         </div>
     </section>
