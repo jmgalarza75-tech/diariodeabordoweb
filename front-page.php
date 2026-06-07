@@ -6,8 +6,13 @@ get_header(); ?>
 
 <main id="godly-home">
     <!-- 1. HERO SECTION -->
-    <section class="hero-stage" style="background-image: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 100%), url('<?php echo get_template_directory_uri(); ?>/hero-bg.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-content">
+    <section class="hero-stage" style="position: relative; overflow: hidden; background: #000;">
+        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: grayscale(1); opacity: 0.6;">
+            <source src="<?php echo get_template_directory_uri(); ?>/hero-video.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 100%); z-index: 1;"></div>
+        
+        <div class="hero-content" style="position: relative; z-index: 2;">
             <div class="hero-left reveal">
                 <h2 class="manifesto-text">
                     EL LIDERAZGO NO ES EL RUIDO QUE HACES. ES LA <span style="color:var(--accent); font-weight:600;">DIRECCI&Oacute;N</span> QUE MANTIENES 
