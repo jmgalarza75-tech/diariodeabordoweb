@@ -229,6 +229,11 @@ get_header(); ?>
                 <h3>PERSPECTIVA TOTAL</h3>
                 <p>Iluminamos el entorno para revelar posibilidades donde otros solo ven niebla y resistencia.</p>
             </div>
+            <div class="method-card">
+                <span>REGISTRO / DIARIO</span>
+                <h3>MEMORIA ACTIVA</h3>
+                <p>Documentamos el trayecto. Convertimos la experiencia en aprendizaje emp&iacute;rico y el progreso en un legado tangible.</p>
+            </div>
         </div>
     </section>
 
