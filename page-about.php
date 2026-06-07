@@ -39,43 +39,53 @@ get_header(); ?>
 
     /* Star Wars Crawl Effect */
     .manifesto-section { padding: 120px 20px; background: #000; position: relative; z-index: 6; display: flex; justify-content: center; flex-direction: column; align-items: center;}
+    
     .star-wars-container {
         display: flex;
         justify-content: center;
         position: relative;
-        height: 80vh;
-        color: #e5b13a; /* Amarillo Star Wars o var(--accent) */
-        overflow: hidden;
-        perspective: 400px;
-        background: #000;
+        height: 60vh;
+        width: 100%;
+        color: var(--accent);
+        perspective: 600px;
+        background: transparent;
         margin: 50px 0;
+        overflow: hidden;
+        z-index: 20;
     }
 
     .manifesto-text { 
         position: absolute;
-        top: 100%;
-        font-size: clamp(24px, 4vw, 40px); 
+        bottom: -100%; /* Empieza escondido abajo */
+        font-size: clamp(20px, 3vw, 36px); 
         font-weight: 700; 
-        line-height: 1.5; 
-        max-width: 900px; 
+        line-height: 1.8; 
+        max-width: 800px; 
         text-align: justify;
         color: var(--accent);
         transform-origin: 50% 100%;
         animation: crawl 40s linear infinite;
+        /* Drop shadow para que resalte más y parezca brillante */
+        text-shadow: 0 0 10px rgba(201,168,76, 0.5);
     }
     
     @keyframes crawl {
         0% {
-            top: 100%;
-            transform: rotateX(20deg) translateZ(0);
+            bottom: -50%;
+            transform: rotateX(30deg) scale(1);
+            opacity: 0;
+        }
+        5% {
+            opacity: 1;
         }
         100% {
-            top: -150%;
-            transform: rotateX(25deg) translateZ(-2000px);
+            bottom: 120%;
+            transform: rotateX(40deg) scale(0.3);
+            opacity: 0;
         }
     }
 
-    .manifesto-text p { margin-bottom: 2rem; }
+    .manifesto-text p { margin-bottom: 2.5rem; }
 
     /* Glassmorphism Cards */
     .method-block { 
