@@ -100,17 +100,7 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- 4. NEWSLETTER SECTION -->
-    <section id="newsletter" style="padding:150px 40px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; text-align: center; background: #050505; position: relative; z-index: 10;">
-        <span class="technical-label" style="margin-bottom: 20px;">REGISTRO DE BIT&Aacute;CORA / SUBSTACK</span>
-        <h2 style="font-size: clamp(30px, 4.5vw, 54px); font-weight: 700; margin-bottom: 40px;">&Uacute;NETE A LA TRIPULACI&Oacute;N.</h2>
-        <div style="background: transparent; border: 1px solid var(--line); padding: 5px; position: relative;">
-            <iframe src="https://josemgalarza.substack.com/embed" width="480" height="320" 
-                    style="border: none; background: transparent; filter: invert(1) hue-rotate(180deg) contrast(1.1); transform: scale(1.05);">
-            </iframe>
-            <div style="position:absolute; bottom: 0; left: 0; right: 0; height: 30px; background: #050505; pointer-events: none;"></div>
-        </div>
-    </section>
+
 </main>
 
 <?php get_footer(); ?>
