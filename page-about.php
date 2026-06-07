@@ -9,7 +9,7 @@ get_header(); ?>
     /* Hero puramente tipográfico, sin imagen lateral */
     .about-header { 
         position: relative; 
-        min-height: 80vh; 
+        min-height: 50vh; /* REDUCED HEIGHT to lessen blank space */
         display: flex; 
         flex-direction: column;
         justify-content: center;
@@ -99,7 +99,7 @@ get_header(); ?>
 
     .manifesto-text { 
         position: absolute;
-        bottom: -100%; /* Empieza escondido abajo */
+        top: 80%; /* Start closer to the viewport to eliminate the huge blank gap */
         font-size: clamp(24px, 3.5vw, 44px); /* Ligeramente más grande */
         font-weight: 700; 
         line-height: 1.8; 
@@ -112,12 +112,12 @@ get_header(); ?>
     }
     
     .star-wars-container.is-playing .manifesto-text {
-        animation: crawl 50s linear infinite;
+        animation: crawl 40s linear forwards; /* Reduced to 40s, forwards so it stays at the end */
     }
     
     @keyframes crawl {
         0% {
-            bottom: -50%;
+            top: 80%;
             transform: rotateX(30deg) scale(1);
             opacity: 0;
         }
@@ -125,8 +125,8 @@ get_header(); ?>
             opacity: 1;
         }
         100% {
-            bottom: 120%;
-            transform: rotateX(40deg) scale(0.3);
+            top: -100%;
+            transform: rotateX(45deg) scale(0.4);
             opacity: 0;
         }
     }
@@ -183,7 +183,7 @@ get_header(); ?>
             
             <!-- Botón de Inicio -->
             <div class="crawl-overlay" id="crawl-overlay">
-                <button id="start-crawl-btn" class="btn-primary" style="background:var(--accent); color:#000; font-family: var(--font-mono); letter-spacing: 0.1em; cursor: pointer; border: none;">INICIAR MANIFIESTO</button>
+                <button id="start-crawl-btn" class="btn-primary" style="background:#e60000; color:#fff; font-family: var(--font-mono); letter-spacing: 0.2em; cursor: pointer; border: none; font-size: 24px; font-weight: 900; padding: 15px 50px; border-radius: 4px; box-shadow: 0 0 20px rgba(230,0,0,0.5);">START</button>
             </div>
 
             <div class="manifesto-text">
