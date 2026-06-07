@@ -69,7 +69,7 @@ get_header(); ?>
                     }
                     ?>
                     <div class="gallery-slice" 
-                         style="background-image: url('<?php echo $img_url; ?>'); background-size: cover; background-position: center;" 
+                         style="position: relative; overflow: hidden; background-image: url('<?php echo $img_url; ?>'); background-size: cover; background-position: center;" 
                          onclick="location.href='<?php the_permalink(); ?>'">
                          
                          <!-- Overlay oscuro para que el texto resalte -->
