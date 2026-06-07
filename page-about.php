@@ -47,7 +47,7 @@ get_header(); ?>
         height: 70vh;
         width: 100%;
         color: var(--accent);
-        perspective: 800px; /* Perspectiva más realista para evitar el aplastamiento */
+        perspective: 400px; /* Perspectiva clásica fuerte */
         background: #000;
         margin: 0;
         overflow: hidden;
@@ -97,36 +97,42 @@ get_header(); ?>
         transition: opacity 1s ease;
     }
 
+    /* THE TILTED PLANE */
+    .star-wars-plane {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        transform-origin: 50% 100%;
+        transform: rotateX(25deg); /* Inclinación fija hacia atrás */
+        display: flex;
+        justify-content: center;
+    }
+
+    /* THE TEXT SCROLLING ALONG THE PLANE */
     .manifesto-text { 
         position: absolute;
-        left: 50%; /* Centrado forzado */
-        top: 100%; /* Empieza exactamente debajo del contenedor */
-        font-size: clamp(30px, 5vw, 60px); /* Texto mucho más GRANDE */
+        top: 100%; /* Empieza fuera del contenedor por abajo */
+        font-size: clamp(30px, 5vw, 60px); 
         font-weight: 700; 
         line-height: 1.6; 
-        width: 95%; /* Ocupa todo el ancho */
-        max-width: 1400px;
+        width: 90%; 
+        max-width: 1200px;
         text-align: justify;
-        color: #e5b13a; /* Amarillo clásico o dorado */
-        transform-origin: 50% 100%;
-        transform: translateX(-50%);
+        color: #e5b13a; 
         text-shadow: 0 0 10px rgba(229, 177, 58, 0.5);
     }
     
     .star-wars-container.is-playing .manifesto-text {
-        animation: crawl 45s linear forwards;
+        animation: crawl 55s linear forwards;
     }
     
     @keyframes crawl {
         0% {
             top: 100%;
-            transform: translateX(-50%) rotateX(20deg) translateZ(0);
-            opacity: 1;
         }
         100% {
-            top: -200%; /* Se desplaza hacia arriba y lejos */
-            transform: translateX(-50%) rotateX(25deg) translateZ(-2500px);
-            opacity: 0;
+            top: -250%; /* Sube a través del plano inclinado */
         }
     }
 
@@ -185,22 +191,25 @@ get_header(); ?>
                 <button id="start-crawl-btn" class="btn-primary" style="background:#e60000; color:#fff; font-family: var(--font-mono); letter-spacing: 0.2em; cursor: pointer; border: none; font-size: 24px; font-weight: 900; padding: 15px 50px; border-radius: 4px; box-shadow: 0 0 20px rgba(230,0,0,0.5);">START</button>
             </div>
 
-            <div class="manifesto-text">
-                <p>Creemos que toda persona lleva dentro una direcci&oacute;n, una fuerza y una luz propia. Nuestro trabajo no es imponer un camino, sino acompa&ntilde;ar a cada persona para que descubra el suyo con mayor claridad, confianza y verdad.</p>
-                
-                <p>Creemos en el crecimiento personal como un proceso profundo, consciente y sostenido. No se trata de correr m&aacute;s, sino de avanzar con sentido; no de parecer, sino de transformar desde dentro.</p>
-                
-                <p>Somos ancla cuando hace falta estabilidad. Ofrecemos un espacio seguro para parar, escuchar, ordenar el ruido y volver al centro.</p>
-                
-                <p>Somos br&uacute;jula cuando llega el momento de elegir. Ayudamos a convertir la confusi&oacute;n en direcci&oacute;n, la intenci&oacute;n en decisi&oacute;n y el aprendizaje en acci&oacute;n.</p>
-                
-                <p>Somos faro cuando el camino se vuelve incierto. Iluminamos posibilidades, abrimos perspectiva y recordamos que incluso en la duda existe una forma de avanzar con conciencia.</p>
-                
-                <p>Creemos en un aprendizaje que une reflexi&oacute;n y acci&oacute;n. Porque crecer no es solo comprenderse mejor, sino atreverse a vivir de forma m&aacute;s coherente con lo que uno es y con la vida que quiere construir.</p>
-                
-                <p>Aqu&iacute; no venimos a encajar en moldes ajenos. Venimos a desarrollar criterio, fortalecer la identidad, expandir la mirada y construir una vida con prop&oacute;sito, equilibrio y presencia.</p>
-                
-                <p>Este es nuestro manifiesto: acompa&ntilde;ar procesos reales, honrar el ritmo de cada persona y convertir el crecimiento personal en una pr&aacute;ctica viva, valiente y transformadora.</p>
+            <!-- Plano Inclinado Fijo -->
+            <div class="star-wars-plane">
+                <div class="manifesto-text">
+                    <p>Creemos que toda persona lleva dentro una direcci&oacute;n, una fuerza y una luz propia. Nuestro trabajo no es imponer un camino, sino acompa&ntilde;ar a cada persona para que descubra el suyo con mayor claridad, confianza y verdad.</p>
+                    
+                    <p>Creemos en el crecimiento personal como un proceso profundo, consciente y sostenido. No se trata de correr m&aacute;s, sino de avanzar con sentido; no de parecer, sino de transformar desde dentro.</p>
+                    
+                    <p>Somos ancla cuando hace falta estabilidad. Ofrecemos un espacio seguro para parar, escuchar, ordenar el ruido y volver al centro.</p>
+                    
+                    <p>Somos br&uacute;jula cuando llega el momento de elegir. Ayudamos a convertir la confusi&oacute;n en direcci&oacute;n, la intenci&oacute;n en decisi&oacute;n y el aprendizaje en acci&oacute;n.</p>
+                    
+                    <p>Somos faro cuando el camino se vuelve incierto. Iluminamos posibilidades, abrimos perspectiva y recordamos que incluso en la duda existe una forma de avanzar con conciencia.</p>
+                    
+                    <p>Creemos en un aprendizaje que une reflexi&oacute;n y acci&oacute;n. Porque crecer no es solo comprenderse mejor, sino atreverse a vivir de forma m&aacute;s coherente con lo que uno es y con la vida que quiere construir.</p>
+                    
+                    <p>Aqu&iacute; no venimos a encajar en moldes ajenos. Venimos a desarrollar criterio, fortalecer la identidad, expandir la mirada y construir una vida con prop&oacute;sito, equilibrio y presencia.</p>
+                    
+                    <p>Este es nuestro manifiesto: acompa&ntilde;ar procesos reales, honrar el ritmo de cada persona y convertir el crecimiento personal en una pr&aacute;ctica viva, valiente y transformadora.</p>
+                </div>
             </div>
         </div>
 
