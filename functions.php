@@ -150,6 +150,30 @@ function antigravity_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'antigravity_customize_register' );
 
+// ── CUSTOM ROUTE FOR SITEMAP (No DB page needed) ──
+add_action('init', function() {
+    add_rewrite_rule('^mapa-del-sitio/?$', 'index.php?sitemap_custom=1', 'top');
+    
+    // Auto-flush rewrite rules once to apply the new route
+    if (!get_option('sitemap_rewrite_flushed_v2')) {
+        flush_rewrite_rules(false);
+        update_option('sitemap_rewrite_flushed_v2', 1);
+    }
+});
+add_filter('query_vars', function($vars) {
+    $vars[] = 'sitemap_custom';
+    return $vars;
+});
+add_action('template_redirect', function() {
+    if (get_query_var('sitemap_custom') == 1) {
+        $template = locate_template('page-mapa-del-sitio.php');
+        if ($template) {
+            include($template);
+            exit;
+        }
+    }
+});
+
 /**
  * ── INJECT CUSTOMIZER CSS ──
  */
