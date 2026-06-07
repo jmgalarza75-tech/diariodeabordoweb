@@ -15,8 +15,7 @@ get_header(); ?>
         <div class="hero-content" style="position: relative; z-index: 2;">
             <div class="hero-left reveal">
                 <h2 class="manifesto-text">
-                    EL LIDERAZGO NO ES EL RUIDO QUE HACES. ES LA <span style="color:var(--accent); font-weight:600;">DIRECCI&Oacute;N</span> QUE MANTIENES 
-                    CUANDO EL MAR SE PONE DIF&Iacute;CIL.
+                    SOMOS <span style="color:var(--accent); font-weight:600;">ANCLA, BR&Uacute;JULA Y FARO</span>. CONVERTIMOS EL CRECIMIENTO PERSONAL EN UNA PR&Aacute;CTICA VIVA Y TRANSFORMADORA.
                 </h2>
                 <h1 class="hero-title">ABORDO.</h1>
             </div>
