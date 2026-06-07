@@ -32,7 +32,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 DIARIO DE ABORDO. <span style="color: var(--accent);">[SYSTEMS DIV // MISSION_READY]</span>
+                &copy; <?php echo date('Y'); ?> DIARIO DE ABORDO. <span style="color: var(--accent);">[SYSTEMS DIV // MISSION_READY]</span>
+                <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.6; letter-spacing: 0.1em; text-transform: uppercase;">
+                    DISE&Ntilde;ADO POR <a href="https://pyme360.online" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 2px; transition: all 0.3s;">PYME360</a>
+                </div>
             </div>
         </footer>
     </div><!-- #app -->
