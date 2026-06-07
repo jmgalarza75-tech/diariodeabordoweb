@@ -124,7 +124,7 @@ get_header(); ?>
     }
     
     .star-wars-container.is-playing .manifesto-text {
-        animation: crawl 100s linear forwards;
+        animation: crawl 240s linear forwards; /* 4 minutos de duración para leer con calma */
     }
     
     @keyframes crawl {
