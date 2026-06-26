@@ -250,3 +250,31 @@ function antigravity_setup_content() {
 add_action('after_switch_theme', 'antigravity_setup_content');
 
 add_action( 'init', 'antigravity_register_patterns' );
+
+/**
+ * ── SEO & GEO TITLE INJECTION ──
+ * Forzamos que WordPress use nuestro 'seo_title' de los metadatos
+ */
+function antigravity_custom_document_title_parts($title) {
+    if (is_single() || is_page()) {
+        $seo_title = get_post_meta(get_the_ID(), 'seo_title', true);
+        if (!empty($seo_title)) {
+            $title['title'] = $seo_title;
+        }
+    }
+    return $title;
+}
+add_filter('document_title_parts', 'antigravity_custom_document_title_parts');
+
+/**
+ * ── CLEAN UP INJECTED STYLES ──
+ * Removemos el bloque <style> inyectado por el script de publicación local 
+ * para respetar el diseño nativo y evitar fondos blancos.
+ */
+function antigravity_clean_injected_styles($content) {
+    // Removemos la inyección específica: <!-- wp:html --> <style>...</style> <!-- /wp:html -->
+    $content = preg_replace('/<!-- wp:html -->\s*<style>.*?<\/style>\s*<!-- \/wp:html -->/is', '', $content);
+    return $content;
+}
+add_filter('the_content', 'antigravity_clean_injected_styles', 5);
+

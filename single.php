@@ -23,10 +23,10 @@
 </script>
 <?php endwhile; endif; rewind_posts(); ?>
 
-<main class="post-bitacora" style="background: var(--godly-black); color: white; min-height: 100vh; padding-top: 120px;">
+<main class="post-bitacora" style="background: var(--bg); color: var(--fg); min-height: 100vh; padding-top: 120px;">
     <article class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <header class="post-header" style="margin-bottom: 60px; border-left: 2px solid var(--godly-gold); padding-left: 30px;">
+            <header class="post-header" style="margin-bottom: 60px; border-left: 2px solid var(--accent); padding-left: 30px;">
                 <span class="technical-meta" style="font-family: 'Space Mono', monospace; font-size: 10px; opacity: 0.5; letter-spacing: 2px; display: block; margin-bottom: 10px;">
                     LOG_FILE // <?php echo get_the_date('Y.m.d'); ?> // ARCHIVE_ID: <?php the_ID(); ?>
                 </span>
@@ -37,7 +37,7 @@
 
             <!-- GEO: BLUF (Bottom Line Up Front) / Resumen Ejecutivo para IAs -->
             <?php if(has_excerpt()): ?>
-            <div class="post-bluf" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 30px; margin-bottom: 50px; font-size: 20px; font-style: italic; color: var(--godly-gold); border-radius: 4px;">
+            <div class="post-bluf" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 30px; margin-bottom: 50px; font-size: 20px; font-style: italic; color: var(--accent); border-radius: 4px;">
                 <strong>Resumen Ejecutivo:</strong> <?php echo get_the_excerpt(); ?>
             </div>
             <?php endif; ?>
@@ -53,7 +53,7 @@
             </div>
 
             <footer style="margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <a href="<?php echo home_url(); ?>" style="color: var(--godly-gold); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px;">
+                <a href="<?php echo home_url(); ?>" style="color: var(--accent); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px;">
                     ← RETURN_TO_COMMAND_CENTER
                 </a>
             </footer>

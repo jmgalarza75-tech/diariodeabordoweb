@@ -4,15 +4,62 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-    // Fallback: Generar meta description dinámica desde el extracto si no hay plugin SEO
-    if (is_single() && !has_action('wp_head', 'wpseo_head')) {
-        $excerpt = get_the_excerpt();
-        if ($excerpt) {
-            echo '<meta name="description" content="' . esc_attr(wp_strip_all_tags($excerpt)) . '">' . "\n";
+    // SEO & GEO: Meta Description Dinámica
+    if (!has_action('wp_head', 'wpseo_head')) {
+        $meta_desc = '';
+        if (is_single() || is_page()) {
+            $custom_desc = get_post_meta(get_the_ID(), 'meta_description', true);
+            if (!empty($custom_desc)) {
+                $meta_desc = $custom_desc;
+            } elseif (has_excerpt()) {
+                $meta_desc = get_the_excerpt();
+            }
+        } else {
+            $meta_desc = get_bloginfo('description');
+        }
+        
+        if ($meta_desc) {
+            echo '<meta name="description" content="' . esc_attr(wp_strip_all_tags($meta_desc)) . '">' . "\n";
         }
     }
     ?>
     <?php wp_head(); ?>
+    <?php
+    // GEO: Inyección de Schema JSON-LD para IAs generativas y Google
+    if (is_front_page() || is_home()) {
+        $schema = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'WebSite',
+            'name' => get_bloginfo('name'),
+            'url' => home_url('/'),
+            'description' => get_bloginfo('description'),
+            'publisher' => array(
+                '@type' => 'Organization',
+                'name' => get_bloginfo('name')
+            )
+        );
+        echo '<script type="application/ld+json">' . wp_json_encode($schema) . '</script>' . "\n";
+    } elseif (is_single()) {
+        $schema = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'Article',
+            'headline' => get_post_meta(get_the_ID(), 'seo_title', true) ?: get_the_title(),
+            'description' => get_post_meta(get_the_ID(), 'meta_description', true) ?: wp_strip_all_tags(get_the_excerpt()),
+            'url' => get_permalink(),
+            'author' => array(
+                '@type' => 'Person',
+                'name' => get_the_author()
+            ),
+            'datePublished' => get_the_date('c'),
+            'dateModified' => get_the_modified_date('c')
+        );
+        $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        if ($image) {
+            $schema['image'] = $image;
+        }
+        echo '<script type="application/ld+json">' . wp_json_encode($schema) . '</script>' . "\n";
+    }
+    ?>
     <style>
         /* ── DYNAMIC ASSET PARITY: Ensure correct image URLs for templates ── */
         :root {
