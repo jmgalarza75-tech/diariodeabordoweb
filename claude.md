@@ -24,3 +24,9 @@
 - Modificamos `functions.php` con el filtro `document_title_parts` para usar el título SEO optimizado directamente en la pestaña del navegador.
 - Actualizamos entradas antiguas (Semanas 4, 5 y 6) vía API REST para corregir títulos no optimizados e inyectar carátulas faltantes ("Lean para Ejecutivos") generadas por IA.
 - Configuramos el automatizador local (`publish.ts` en el repositorio origen) para publicar siempre en estado `publish` en vez de `draft`.
+
+### [2026-06-26] Limpieza de Diseño y Sincronización de Contenidos
+**Tareas Realizadas:**
+- Solución de problemas de visualización en las entradas (`single.php`) donde el texto era ilegible por un fallo en las variables de color CSS. Se actualizaron para usar las correctas (`--bg` y `--accent`).
+- Se introdujo un escudo protector en `functions.php`: el filtro `antigravity_clean_injected_styles` en `the_content` para eliminar cualquier inyección de la etiqueta `<style>` que provenga del script local, protegiendo así el diseño del tema contra bloqueos futuros o estilos blancos en modo oscuro.
+- Refactorización de la integración con el generador local de contenido, habilitando parseo robusto de Markdown y el auto-append de los Activos Tácticos de cada semana directamente en los posts de WordPress.
