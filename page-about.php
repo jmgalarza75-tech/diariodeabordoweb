@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About // El Arquitecto
+ * Template Name: About // Manifiesto
  * Repositorio: Diario de Abordo 2.2
  */
 get_header(); ?>
@@ -176,7 +176,7 @@ get_header(); ?>
     <header class="about-header">
         <div class="header-content reveal">
             <span class="technical-label" style="color:var(--accent); margin-bottom: 30px; display: block; letter-spacing: 0.3em;">MANIFIESTO</span>
-            <h1>EL ARQUITECTO<br><span>DE MANDO.</span></h1>
+            <h1>BIT&Aacute;CORA<br><span>DE RUMBO.</span></h1>
             <p style="font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 40px; letter-spacing: 0.2em; text-transform: uppercase;">JOSE MAR&Iacute;A G. &mdash; FUNDADOR DIARIO DE ABORDO</p>
         </div>
     </header>
@@ -188,15 +188,17 @@ get_header(); ?>
             
             <!-- Botón de Inicio -->
             <div class="crawl-overlay" id="crawl-overlay">
-                <button id="start-crawl-btn" class="btn-primary" style="background:#e60000; color:#fff; font-family: var(--font-mono); letter-spacing: 0.2em; cursor: pointer; border: none; font-size: 24px; font-weight: 900; padding: 15px 50px; border-radius: 4px; box-shadow: 0 0 20px rgba(230,0,0,0.5);">START</button>
+                <button id="start-crawl-btn" class="btn-primary" style="background:#e60000; color:#fff; font-family: var(--font-mono); letter-spacing: 0.2em; cursor: pointer; border: none; font-size: 24px; font-weight: 900; padding: 15px 50px; border-radius: 4px; box-shadow: 0 0 20px rgba(230,0,0,0.5);">LEER MANIFIESTO</button>
             </div>
 
             <!-- Plano Inclinado Fijo -->
             <div class="star-wars-plane">
                 <div class="manifesto-text">
+                    <p>Diario de Abordo es una bit&aacute;cora sobria para personas que necesitan recuperar direcci&oacute;n, criterio y dignidad en medio de una transici&oacute;n vital o profesional.</p>
+
                     <p>Creemos que toda persona lleva dentro una direcci&oacute;n, una fuerza y una luz propia. Nuestro trabajo no es imponer un camino, sino acompa&ntilde;ar a cada persona para que descubra el suyo con mayor claridad, confianza y verdad.</p>
                     
-                    <p>Creemos en el crecimiento personal como un proceso profundo, consciente y sostenido. No se trata de correr m&aacute;s, sino de avanzar con sentido; no de parecer, sino de transformar desde dentro.</p>
+                    <p>Creemos en el crecimiento personal como un proceso profundo, consciente y sostenido. No se trata de correr m&aacute;s, sino de avanzar con sentido; no de parecer, sino de volver a vivir con criterio propio.</p>
                     
                     <p>Somos ancla cuando hace falta estabilidad. Ofrecemos un espacio seguro para parar, escuchar, ordenar el ruido y volver al centro.</p>
                     
@@ -208,7 +210,7 @@ get_header(); ?>
                     
                     <p>Aqu&iacute; no venimos a encajar en moldes ajenos. Venimos a desarrollar criterio, fortalecer la identidad, expandir la mirada y construir una vida con prop&oacute;sito, equilibrio y presencia.</p>
                     
-                    <p>Este es nuestro manifiesto: acompa&ntilde;ar procesos reales, honrar el ritmo de cada persona y convertir el crecimiento personal en una pr&aacute;ctica viva, valiente y transformadora.</p>
+                    <p>Este es nuestro manifiesto: acompa&ntilde;ar procesos reales, honrar el ritmo de cada persona y convertir la confusi&oacute;n en rumbo, la culpa en responsabilidad justa y el cambio en una decisi&oacute;n digna.</p>
                 </div>
             </div>
         </div>
@@ -238,7 +240,7 @@ get_header(); ?>
     </section>
 
     <section class="reveal" style="padding: 120px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); background: #030303;">
-        <h2 style="font-size: clamp(34px, 6vw, 84px); font-weight: 900; letter-spacing: -0.03em;">EMPIEZA EL ASCENSO.</h2>
+        <h2 style="font-size: clamp(34px, 6vw, 84px); font-weight: 900; letter-spacing: -0.03em;">RECUPERA EL RUMBO.</h2>
         <a href="<?php echo home_url('/#newsletter'); ?>" class="btn-primary" style="margin-top: 50px; font-size: 14px;">UNIRSE A LA BIT&Aacute;CORA &rarr;</a>
     </section>
 </main>

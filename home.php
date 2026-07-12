@@ -19,7 +19,7 @@ get_header(); ?>
     <div class="blog-header">
         <span class="technical-label">ARCHIVO COMPLETO / HIST&Oacute;RICO</span>
         <h1 class="blog-title">BIT&Aacute;CORA.</h1>
-        <p class="blog-subtitle">Descubre las últimas transmisiones, tácticas de crecimiento y reflexiones de liderazgo.</p>
+        <p class="blog-subtitle">Una bitácora sobria para recuperar dirección, criterio y dignidad en medio de una transición vital o profesional.</p>
     </div>
     
     <div class="blog-divider"></div>
